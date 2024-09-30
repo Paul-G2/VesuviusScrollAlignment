@@ -224,7 +224,7 @@ def extract_img_from_volume(target_vol_info, ul, ll, ur, xfrm, img_cache=None, e
 
     for z in range(min_z, max_z + 1):
         if z < 0 or z >= target_vol_info.num_imgs:
-            subvol_img = np.zeros_like(img_shape_d, dtype=dtype)
+            subvol_img = np.zeros(img_shape_d, dtype=dtype)
         else:
             subvol_img = get_img(z, target_vol_info, img_cache, eight_bit, downsamp, blur)
         subvol_img = np.pad(subvol_img, (pad_y, pad_x))
